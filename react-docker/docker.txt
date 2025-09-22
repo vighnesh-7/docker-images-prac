@@ -1,0 +1,12 @@
+sudo docker build -t react-docker .
+
+sudo docker images
+
+sudo docker rmi [image_id]
+
+sudo docker run -it [image_name] sh 
+
+sudo docker run -p 5173:5173 react-docker // no dynamic changes
+
+sudo docker run -p 5173:5173 -v "$(pwd):/app" -v /app/node_modules react-docker // with dynamic changes
+
