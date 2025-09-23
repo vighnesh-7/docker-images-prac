@@ -4,13 +4,19 @@ sudo docker build -t react-docker .
 
 sudo docker images
 
-sudo docker ps -a
+sudo docker pull image_name:tag
+
+sudo docker push image_name:tag
+
+sudo docker rmi [image_id]  
+
+sudo docker ps -a  // running and stopped containers
 
 sudo docker stop [container_id]
 
-sudo docker rmi [image_id]
+sudo docker run -it [image_name] sh  // run the container in interactive shell mode
 
-sudo docker run -it [image_name] sh  // run the container in interactive mode
+sudo docker rm [container_id]  
 
 sudo docker run -p 5173:5173 react-docker // no dynamic changes
 
@@ -20,10 +26,22 @@ sudo docker run -p 5173:5173 -v "$(pwd):/app" -v /app/node_modules react-docker 
 
 docker init
 
-sudo docker compose up
+sudo docker compose up // requires setup compose.yaml file to execute
 
-// docker compose file watch
+sudo docker compose down
 
-sudo docker compose watch 
+sudo docker compose build // buid or rebuild services
+
+sudo docker compose ps 
+
+sudo docker compose watch  // docker compose file watch
 
 // docker scout scans for vulnerabilities in images
+
+sudo docker volume create [volume_name]
+
+sudo docker volume ls
+
+sudo docker volume rm [volume_name]
+
+sudo docker network ls
