@@ -1,12 +1,29 @@
+//https://github.com/adrianhajdin/docker-course/tree/main
+
 sudo docker build -t react-docker .
 
 sudo docker images
 
+sudo docker ps -a
+
+sudo docker stop [container_id]
+
 sudo docker rmi [image_id]
 
-sudo docker run -it [image_name] sh 
+sudo docker run -it [image_name] sh  // run the container in interactive mode
 
 sudo docker run -p 5173:5173 react-docker // no dynamic changes
 
 sudo docker run -p 5173:5173 -v "$(pwd):/app" -v /app/node_modules react-docker // with dynamic changes
 
+// docker compose
+
+docker init
+
+sudo docker compose up
+
+// docker compose file watch
+
+sudo docker compose watch 
+
+// docker scout scans for vulnerabilities in images
